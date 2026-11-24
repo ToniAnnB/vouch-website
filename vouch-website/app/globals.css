@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* ---------- VOUCH design tokens (use as bg-vouch-blue, font-display, animate-float …) ---------- */
+@theme {
+  --color-vouch-blue: #1c55a1;
+  --color-vouch-navy: #123f7a;
+  --color-sun: #ffd93d;
+  --color-sun-dark: #d9b523;
+  --color-cream: #fffbf3;
+  --color-ink: #1f2937;
+  --color-muted: #5b6474;
+  --color-line: #ece6d8;
+  --color-coral: #f27a5e;
+  --color-coral-dark: #d9573a;
+  --color-leaf: #3baf82;
+  --color-sky: #e6f0ff;
+  --color-peach: #ffede6;
+  --color-mint: #e3f6ee;
+  --color-lemon: #fff6d1;
+
+  --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-bob: bob 6s ease-in-out infinite;
+  --animate-spin-slow: spin 16s linear infinite;
+  --animate-morph: morph 12s ease-in-out infinite;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-kenburns: kenburns 20s ease-in-out infinite alternate;
+  --animate-grow-x: grow-x 0.9s 0.4s ease both;
+  --animate-pop: pop 0.4s ease both;
+  --animate-shake: shake 0.35s;
+  --animate-draw: draw 0.6s ease forwards;
+
+  @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+  @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-4deg) } 50% { transform: translateY(-12px) rotate(3deg) } }
+  @keyframes morph { 50% { border-radius: 60% 40% 55% 45% / 40% 60% 40% 60% } }
+  @keyframes marquee { to { transform: translateX(-50%) } }
+  @keyframes kenburns { from { transform: scale(1.05) } to { transform: scale(1.12) } }
+  @keyframes grow-x { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+  @keyframes pop { from { transform: scale(.94); opacity: 0 } to { transform: none; opacity: 1 } }
+  @keyframes shake { 25% { transform: translateX(-5px) } 75% { transform: translateX(5px) } }
+  @keyframes draw { to { stroke-dashoffset: 0 } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { @apply bg-cream text-ink font-sans antialiased; font-size: 17px; line-height: 1.65; overflow-x: clip; }
+  h1, h2, h3, h4 { @apply font-display font-semibold text-vouch-navy; line-height: 1.15; }
+}
+
+/* ---------- Scroll reveal (toggled by <Reveal>) ---------- */
+.reveal { opacity: 0; transform: translateY(22px) rotate(var(--r, 0deg)); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: rotate(var(--r, 0deg)); }
+
+/* Highlighter underline in headings */
+.hl { position: relative; white-space: nowrap; }
+.hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: .12em; height: .3em; border-radius: 6px; z-index: -1; background: var(--hl, var(--color-sun)); opacity: .65; transform-origin: left; animation: var(--animate-grow-x); }
+
+/* Blurred fill behind un-cropped photos */
+.photo-mat::before { content: ""; position: absolute; inset: -20px; background: var(--bg) center / cover; filter: blur(18px) saturate(1.1); opacity: .75; transform: scale(1.1); }
+
+/* Hide native <details> marker */
+summary::-webkit-details-marker { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: rotate(var(--r, 0deg)); }
+}
+
+@keyframes wiggle { 30% { transform: translateY(-3px) rotate(-2deg) } 60% { transform: translateY(-3px) rotate(2deg) } 100% { transform: translateY(-2px) } }
