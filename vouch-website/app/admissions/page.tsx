@@ -37,7 +37,7 @@ function Q({ q, open = false, children }: { q: string; open?: boolean; children:
 
 function Group({ icon, bg, fg, title, children }: { icon: string; bg: string; fg: string; title: string; children: React.ReactNode }) {
   return (
-    <Reveal className="mb-9">
+    <Reveal className="mb-7 md:mb-9">
       <h2 className="mb-3.5 flex items-center gap-3 text-2xl">
         <span className={`grid size-[46px] shrink-0 place-items-center rounded-[14px] ${bg} ${fg}`}><Icon name={icon} /></span>{title}
       </h2>
@@ -81,7 +81,7 @@ export default function Admissions() {
           <Q q="Is there aftercare?">Yes, from 2:30pm – 5:00pm.</Q>
         </Group>
 
-        <Reveal className="mt-5 grid items-center gap-6 overflow-hidden rounded-[40px] bg-vouch-blue p-9 text-white md:grid-cols-[1fr_auto]">
+        <Reveal className="mt-5 grid items-center gap-6 overflow-hidden rounded-[32px] bg-vouch-blue p-7 text-white md:rounded-[40px] md:p-9 md:grid-cols-[1fr_auto]">
           <div>
             <h2 className="mb-1 text-3xl !text-white">Still have a question?</h2>
             <p className="opacity-90">Our office is happy to help.</p>

@@ -78,6 +78,7 @@ export const teachers = [
     { photo: 18, name: "Anastasia Williams", cls: "Pre 1" },
     { photo: 19, name: "Britanny Fisher", cls: "Pre 2" },
     { photo: 4, name: "Shamise Johnson", cls: "Pre 2" },
+    { photo: 17, name: "Karlene Evans", cls: "Supervisor" },
   ]},
   { school: "Sylvia Foote Basic School", color: "text-vouch-blue", chip: "bg-sky", people: [
     { photo: 5, name: "Mrs Jennifer Whyte-Reid", cls: "K1" },
@@ -87,14 +88,12 @@ export const teachers = [
     { photo: 9, name: "Nadine Thomas", cls: "K1" },
     { photo: 10, name: "Mrs Natanya Messam-Johnson", cls: "K2" },
     { photo: 11, name: "Shantina Harley", cls: "K2" },
-    { photo: 12, name: "Chantell Campbell", cls: "K2" },
     { photo: 13, name: "Nedra Clarke", cls: "K3" },
     { photo: 14, name: "Johnique Scott", cls: "K3" },
   ]},
   { school: "Special Education Unit", color: "text-leaf", chip: "bg-mint", people: [
     { photo: 15, name: "Aveena Bancroft", cls: "Special Education Unit" },
     { photo: 16, name: "Mrs Nicola Stewart-Wynter", cls: "Special Education Unit" },
-    { photo: 17, name: "Karlene Evans", cls: "Brain Builders Supervisor" },
   ]},
 ];
 
@@ -125,7 +124,7 @@ export const requirements = [
 ];
 
 export const tuition = [
-  { label: "Sylvia Foote Basic School", value: "JMD $25,000" },
+  { label: "Sylvia Foote Basic School", value: "JMD $35,000" },
   { label: "Mary Issa Preschool", value: "JMD $30,000" },
 ];
 export const extraFees = [

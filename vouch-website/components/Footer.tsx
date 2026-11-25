@@ -3,8 +3,8 @@ import { nav, school } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="mt-[84px] bg-vouch-navy pb-6 pt-13 text-[#C9D6E8]">
-      <div className="mx-auto grid max-w-[1140px] grid-cols-2 gap-8 px-6 md:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
+    <footer className="mt-14 md:mt-[84px] bg-vouch-navy pb-6 pt-10 md:pt-13 text-[#C9D6E8]">
+      <div className="mx-auto grid max-w-[1140px] grid-cols-2 gap-x-6 gap-y-7 px-6 md:gap-8 md:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
         <div className="max-md:col-span-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/vamp-logo.png" alt="VOUCH Group of Schools"
@@ -28,7 +28,7 @@ export default function Footer() {
           <a href={`mailto:${school.email}`} className="mb-2 block break-all text-[.93rem] hover:text-white">{school.email}</a>
         </div>
       </div>
-      <p className="mt-10 text-center text-[.83rem] opacity-70">© {new Date().getFullYear()} {school.name}</p>
+      <p className="mt-8 text-center md:mt-10 text-[.83rem] opacity-70">© {new Date().getFullYear()} {school.name}</p>
     </footer>
   );
 }

@@ -5,7 +5,7 @@ export default function Doodles({ light = false, few = false }: { light?: boolea
       <svg viewBox="0 0 24 24" className="absolute left-[4%] top-[14%] w-11 animate-spin-slow max-md:hidden">
         <path fill="#FFD93D" d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z" />
       </svg>
-      <svg viewBox="0 0 40 40" className="absolute right-[6%] top-[10%] w-11 animate-spin-slow [animation-direction:reverse]">
+      <svg viewBox="0 0 40 40" className="absolute right-[4%] top-[3%] w-8 animate-spin-slow [animation-direction:reverse] md:right-[6%] md:top-[10%] md:w-11">
         <circle cx="20" cy="20" r="14" fill="none" stroke="#3BAF82" strokeWidth="5" strokeDasharray="6 7" />
       </svg>
       {!few && (

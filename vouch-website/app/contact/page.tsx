@@ -23,12 +23,12 @@ export default function Contact() {
     <>
       <PageHeader kicker="Contact" title="Get in touch" text="We welcome questions, feedback and inquiries from parents, partners, donors and the wider community." />
       <section className="mx-auto grid max-w-[1140px] items-start gap-7 px-6 md:grid-cols-[minmax(0,.9fr)_minmax(0,1.2fr)]">
-        <div className="grid gap-3.5">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-1 md:gap-3.5">
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 70}>
-              <div className="flex items-center gap-4 rounded-[22px] border border-line bg-white px-5 py-4.5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(18,63,122,.1)]">
-                <span className={`grid size-[46px] shrink-0 place-items-center rounded-[14px] ${c.bg} ${c.fg}`}><Icon name={c.icon} /></span>
-                <div><b className="block">{c.title}</b><p className="text-muted">{c.body}</p></div>
+              <div className="flex h-full flex-col items-start gap-2 rounded-[20px] border border-line bg-white p-4 transition md:flex-row md:items-center md:gap-4 md:rounded-[22px] md:px-5 md:py-4.5 duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(18,63,122,.1)]">
+                <span className={`grid size-9 shrink-0 place-items-center rounded-[12px] md:size-[46px] md:rounded-[14px] ${c.bg} ${c.fg}`}><Icon name={c.icon} className="size-5 md:size-6" /></span>
+                <div className="min-w-0"><b className="block text-[.92rem] md:text-base">{c.title}</b><p className="text-[.84rem] leading-snug text-muted md:text-base">{c.body}</p></div>
               </div>
             </Reveal>
           ))}
@@ -39,7 +39,7 @@ export default function Contact() {
       <section className="mx-auto mt-14 max-w-[1140px] px-6">
         <Reveal className="overflow-hidden rounded-[32px] border-8 border-white bg-white shadow-[0_20px_50px_rgba(18,63,122,.14)]">
           <iframe title="Map to VOUCH Group of Schools" src={school.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen
-            className="block h-[300px] w-full border-0 md:h-[420px]" />
+            className="block h-[240px] w-full border-0 md:h-[420px]" />
           <div className="flex flex-wrap items-center gap-4 px-6 py-5">
             <span className="grid size-[52px] shrink-0 -rotate-6 place-items-center rounded-2xl bg-vouch-blue text-white"><Icon name="pin" /></span>
             <div className="min-w-[200px] flex-1">
